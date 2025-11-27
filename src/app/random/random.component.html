@@ -1,0 +1,9 @@
+<div class="random-component">
+  <h3>Komponent Random (max: {{ max }})</h3>
+  <button (click)="generateRandom()">Generuj liczbę losową</button>
+  
+  <div *ngIf="currentNumber !== null" class="result">
+    <p class="number">Wylosowana liczba: {{ currentNumber }}</p>
+    <p [style.color]="commentColor" class="comment">{{ comment }}</p>
+  </div>
+</div>

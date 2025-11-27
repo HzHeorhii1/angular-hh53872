@@ -1,0 +1,22 @@
+<div class="list-component">
+  <h3>Komponent List</h3>
+  
+  <div class="input-section">
+    <input 
+      type="text" 
+      [(ngModel)]="newItem" 
+      placeholder="Wpisz tekst..."
+      (keyup.enter)="addItem()"
+    />
+    <button (click)="addItem()">Dodaj</button>
+  </div>
+
+  <ul *ngIf="items.length > 0" class="items-list">
+    <li *ngFor="let item of items; let i = index" class="item">
+      <span>{{ item }}</span>
+      <a href="#" (click)="removeItem(i); $event.preventDefault()" class="delete-link">usuń</a>
+    </li>
+  </ul>
+  
+  <p *ngIf="items.length === 0" class="empty-message">Lista jest pusta</p>
+</div>
